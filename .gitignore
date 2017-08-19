@@ -10,3 +10,5 @@
 /project/.sbtserver.lock
 /project/sbt-ui.sbt
 /.idea/
+/src/main/scala/com/example/crazy/
+/hs_err_pid*.log

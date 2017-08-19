@@ -17,7 +17,6 @@
 package com.example
 
 import java.nio.{FloatBuffer, IntBuffer}
-import java.io.Closeable
 import scala.util.control.NonFatal
 import scala.util.{Failure, Try}
 
@@ -30,7 +29,8 @@ package object common {
    * same semantic use of MemoryStack as shown in the LWJGL Blog:
    * http://blog.lwjgl.org/memory-management-in-lwjgl-3/
    */
-  def tryWith[C <: Closeable, R](resource: => C)(f: C => R): Try[R] =
+  def tryWith[C <: AutoCloseable, R](resource: => C)(f: C => R)
+  : Try[R] =
     Try(resource) flatMap { ri =>
       try {
         val retVal = f(ri)

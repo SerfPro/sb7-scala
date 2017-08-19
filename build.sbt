@@ -68,6 +68,8 @@ javaOptions ++= List(
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.0" % "test",
 
+  "org.joml" % "joml" % "1.9.4",
+
   "org.lwjgl" % "lwjgl"          % lwjglVersion,
   "org.lwjgl" % "lwjgl-glfw"     % lwjglVersion,
   "org.lwjgl" % "lwjgl-jemalloc" % lwjglVersion,
