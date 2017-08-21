@@ -35,8 +35,8 @@ extends LwjglApp(_al) {
 
   override protected def setupCallbacks(window: Long)
   : List[NativeResource] = {
-    val keyCB: GLFWKeyCallback = GLFWKeyCallback.create(keyHandler _)
-    glfwSetKeyCallback(window, keyHandler _)
+    val keyCB = GLFWKeyCallback.create(keyHandler _)
+    keyCB set window
 
     keyCB :: Nil
   }

@@ -53,6 +53,7 @@ abstract class LwjglApp(private val al: ApplicationListener) {
     }
   }
 
+  @throws[IllegalStateException]
   protected def initGlfw(): Unit = {
     GLFWErrorCallback.createPrint(System.err).set()
 
