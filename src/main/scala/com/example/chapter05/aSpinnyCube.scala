@@ -69,15 +69,13 @@ class aSpinnyCube extends ApplicationListener {
     glEnable(GL_DEPTH_TEST)
     glDepthFunc(GL_LEQUAL)
 
-    glViewport(0, 0, 800, 600)
     initPerspective()
   }
 
   override def update(time: Double): Unit = {
     val f = time*0.3
 
-    m4.translation(0.0f, 0.0f, -4.0f)
-      .translation (
+    m4.translation (
         (sin(2.1*f)*0.5).asInstanceOf[Float],
         (cos(1.7*f)*0.5).asInstanceOf[Float],
         (sin(1.3*f)*cos(1.5*f)*2.0-4.0).asInstanceOf[Float] )
